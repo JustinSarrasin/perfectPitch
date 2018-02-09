@@ -32,12 +32,12 @@
         </div>
 
         <div>
-            <button>
+            <button class="practice">
                 practice
             </button>
             <!-- <input type="button" id="randomNote" value="random"> -->
         </div>
-        <section class="submit-buttons">
+        <!-- <section class="submit-buttons">
                 <input type="text" value="submit answer">
             <input type="submit" value"C">
             <input type="submit" value"">
@@ -51,187 +51,11 @@
             <input type="submit" value"">
             <input type="submit" value"">
             <input type="submit" value"">
-        </section>
+        </section> -->
     </div>
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
-    <script>
-
-        const perfPitch = {};
-        perfPitch.audio = ["../project_3/audiosamples/C.mp3", "../project_3/audiosamples/CSharp.mp3", "../project_3/audiosamples/D.mp3", "../project_3/audiosamples/DSharp.mp3", "../project_3/audiosamples/E.mp3", "../project_3/audiosamples/F.mp3", "../project_3/audiosamples/FSharp.mp3", "../project_3/audiosamples/G.mp3", "../project_3/audiosamples/GSharp.mp3", "../project_3/audiosamples/A.mp3", "../project_3/audiosamples/ASharp.mp3", "../project_3/audiosamples/B.mp3", "../project_3/audiosamples/CTop.mp3"]
-        // perfPitch.audio = [
-        //         {
-        //             C: "../project_3/audiosamples/C.mp3",
-        //             CSharp: "../project_3/audiosamples/CSharp.mp3",
-        //             D: "../project_3/audiosamples/D.mp3",
-        //             DSharp: "../project_3/audiosamples/DSharp.mp3",
-        //             E: "../project_3/audiosamples/E.mp3",
-        //             F: "../project_3/audiosamples/F.mp3",
-        //             FSharp: "../project_3/audiosamples/FSharp.mp3",
-        //             G: "../project_3/audiosamples/G.mp3",
-        //             GSharp: "../project_3/audiosamples/GSharp.mp3",
-        //             A: "../project_3/audiosamples/A.mp3",
-        //             ASharp: "../project_3/audiosamples/ASharp.mp3",
-        //             B: "../project_3/audiosamples/B.mp3",
-        //             C2: "../project_3/audiosamples/CTop.mp3",
-        //         },
-        //     ];
-
-        //audio variables
-        // let C = new Audio("../project_3/audiosamples/C.mp3");
-        // let D = new Audio("../project_3/audiosamples/D.mp3");
-        // let E = new Audio("../project_3/audiosamples/E.mp3");
-        // let F = new Audio("../project_3/audiosamples/F.mp3");
-        // let G = new Audio("../project_3/audiosamples/G.mp3");
-        // let A = new Audio("../project_3/audiosamples/A.mp3");
-        // let B = new Audio("../project_3/audiosamples/B.mp3");
-        // let C2 = new Audio("../project_3/audiosamples/CTop.mp3");
-        
-        // let CSharp = new Audio("../project_3/audiosamples/CSharp.mp3");
-        // let DSharp = new Audio("../project_3/audiosamples/DSharp.mp3");
-        // let FSharp = new Audio("../project_3/audiosamples/FSharp.mp3");
-        // let GSharp = new Audio("../project_3/audiosamples/GSharp.mp3");
-        // let ASharp = new Audio("../project_3/audiosamples/ASharp.mp3");
-                  
-
-        perfPitch.events = function(){
-        $('div').on('click', function(note) {
-            // grab the note by ID
-            // console.log("something is clicked")
-            let playedNote = $(this).data('index');
-
-            //if this note is played, play matching note 
-            let triggeredNote = perfPitch.audio[Number(playedNote)];
-
-            // console.log(triggeredNote);
-            new Audio(triggeredNote).play();
-        });
-    }
-
-        // click function
-        perfPitch.chosen = function(){
-        //on random button click
-        $('button').on('click', function(chosen) {
-
-            // console.log("something is clicked");
-
-            //trigger a random number out of array
-            let randomTrigger = perfPitch.audio[Math.floor(perfPitch.audio.length * Math.random())];
-            //play random number
-            new Audio(randomTrigger).play();
-            
-            // console.log(randomTrigger);
-
-            // perfPitch.answer = function () {
-            //     $('input').on('submit', function (e) {
-            //         e.preventDefault();
-            //         let product = $('select').val();
-            //         foodAhoy.inventory[product] = foodAhoy.inventory[product] - 1;
-            //         $('ul').empty();
-            //         foodAhoy.displayInventory();
-            //     });
-            // }
-
-            if(randomTrigger === "id"){
-                console.log("good job");
-             } else {
-                 console.log("try again")
-             }
-
-             
-
-            //if this note is played, play matching note 
-            // if (randomNote === 'CSharp') {
-            //     CSharp.play();
-            // }
-            // } else if (playedNote === 'DSharp') {
-            //     DSharp.play();
-            // } else if (playedNote === 'FSharp') {
-            //     FSharp.play();
-            // } else if (playedNote === 'GSharp') {
-            //     GSharp.play();
-            // } else if (playedNote === 'ASharp') {
-            //     ASharp.play();
-            // } else if (playedNote === 'C') {
-            //     C.play();
-            // } else if (playedNote === 'D') {
-            //     D.play();
-            // } else if (playedNote === 'E') {
-            //     E.play();
-            // } else if (playedNote === 'F') {
-            //     F.play();
-            // } else if (playedNote === 'G') {
-            //     G.play();
-            // } else if (playedNote === 'A') {
-            //     A.play();
-            // } else if (playedNote === 'B') {
-            //     B.play();
-            // } else if (playedNote === 'C2') {
-            //     C2.play();
-            // }
-        });
-    }
-
-        perfPitch.init = function () {
-               perfPitch.events();
-               perfPitch.chosen();
-            //    perfPitch.answer();
-
-            }
-
-    
-
-        $(function () {
-                perfPitch.init();
-                // perfPitch.events();
-
-            });
-
-        //  function check() {
-        //         let Q1 = randomNote;
-
-        //         let Q2 = randomNote;
-
-        //         let Q3 = randomNote;
-
-        //         let Q4 = randomNote;
-
-        //         let Q5 = randomNote;
-        //     }
-    
-        
-
-        //document ready 
-     
-            
-            // random note generation
-            //on button click - trigger random note
-            // let key = $(".key");
-            // let randomKey = key[Math.floor(Math.random() * key.length)];
-            // let randomNote = $(key[randomKey].attr('id'))
-            // console.log(randomNote);
-
-           
-            
-
-               
-
-                // $('button').click([Math.floor(Math.random() * key.length)])
-
-
-
-                // random note generation
-                // on button click - trigger random note
-                // let key = $(".key");
-                // let randomKey = key[Math.floor(Math.random() * key.length)];
-                // let randomNote = $(key[randomKey].attr('id'))
-                // console.log(randomNote);
-
-                // var randomelement = elements[Math.floor(Math.random() * elements.length)];
-                // var randomid = $(elements[randomelement].attr("id"))
-                // console.log(randomid)
-            
-    </script>
+    <script src="scripts/script.js"></script>
 
     
 </body>
