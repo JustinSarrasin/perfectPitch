@@ -1,4 +1,5 @@
 const perfPitch = {};
+
 perfPitch.audio = ["../project_3/audiosamples/C.mp3", "../project_3/audiosamples/CSharp.mp3", "../project_3/audiosamples/D.mp3", "../project_3/audiosamples/DSharp.mp3", "../project_3/audiosamples/E.mp3", "../project_3/audiosamples/F.mp3", "../project_3/audiosamples/FSharp.mp3", "../project_3/audiosamples/G.mp3", "../project_3/audiosamples/GSharp.mp3", "../project_3/audiosamples/A.mp3", "../project_3/audiosamples/ASharp.mp3", "../project_3/audiosamples/B.mp3", "../project_3/audiosamples/CTop.mp3"]
 
 
@@ -36,8 +37,8 @@ perfPitch.randomNote = function () {
         perfPitch.switchPractice = true;
         perfPitch.randomIndex = Math.floor(perfPitch.audio.length * Math.random())
         let randomTrigger = perfPitch.audio[perfPitch.randomIndex];
-        //play random number
         new Audio(randomTrigger).play();
+        //play random number
     });
 }
 
@@ -52,45 +53,27 @@ perfPitch.evaluate = function (userIndex) {
 
     if (perfPitch.switchPractice === true) {
         if (perfPitch.randomIndex === userIndex) {
-            perfPitch.switchPractice = false;
-            alert("Goooot it");
+            // alert("Goooot it");
+            console.log(userIndex)
+            let correctKey = $(".keyboard").find(`[data-index='${userIndex}']`)
+
+            // const correctKey = $('.key').data('index');
+            console.log(correctKey)
+            correctKey.addClass('correct');
+        
+            // perfPitch.randomIndex.backgroundColor = 'green';
+            // perfPitch.switchPractice = false;
+            // console.log(perfPitch.randomIndex);
         }
         else {
-            alert('try again');
+            // perfPitch.randomIndex.addClass('wrong');
+            let wrongKey = $(".keyboard").find(`[data-index='${perfPitch.randomIndex}']`)
+            wrongKey.addClass('wrong');
+
         }
 
     }
 }
-
-
-
-
-// perfPitch.random = function(){
-//     // let functionLock = false;
-
-//     $('button').on('click', function (){
-
-//         console.log("I have been clicked");
-
-//         // $('div').on('click', function (noteGuess) {
-//         //     console.log("note guessed");
-//         // });
-
-
-//         // if(false){
-//         //     console.log('unclicked');
-//         // } else {
-//         //     console.log('clicked');
-//         //     $('div').on('click', function (noteGuess){
-//         //         console.log("note guessed");
-//         //     }
-//         // )}
-//     });
-// }
-
-// perfPitch.chosen = function(){
-
-// }
 
 perfPitch.init = function () {
     perfPitch.events();

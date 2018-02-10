@@ -12,22 +12,54 @@ body {
     margin: 0 auto;
 }
 
+.keyboard {
+    display: flex;
+    position: relative;
+    
+}
+
+/* .key {
+    display: flex;
+} */
+
+.white {
+    display: flex;
+    border: 5px solid black;
+    margin: 0 auto;
+}
+
+.black {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    margin: 0 65px 0;
+}
+
 .key-white {
     width: 125px;
     height: 450px;
     background-color:white;
     border: 1px solid black;
-    float:  left;
+    /* float:  left; */
 }
 
 .key-black {
     width: 75px;
     height: 250px;
     background-color: black;
-    float: left;
-    margin: 20px;
+    /* float: left; */
+    margin: 0 30px 0;
 }
 
 .key-white:hover, .key-black:hover {
     background-color: blue;
+}
+
+.correct {
+    background-color: green;
+}
+
+.wrong {
+    background-color: red;
 }
