@@ -1,6 +1,6 @@
 const perfPitch = {};
 
-perfPitch.audio = ["audiosamples/C.mp3", "../project_3/audiosamples/CSharp.mp3", "../project_3/audiosamples/D.mp3", "../project_3/audiosamples/DSharp.mp3", "../project_3/audiosamples/E.mp3", "../project_3/audiosamples/F.mp3", "../project_3/audiosamples/FSharp.mp3", "../project_3/audiosamples/G.mp3", "../project_3/audiosamples/GSharp.mp3", "../project_3/audiosamples/A.mp3", "../project_3/audiosamples/ASharp.mp3", "../project_3/audiosamples/B.mp3", "../project_3/audiosamples/CTop.mp3"]
+perfPitch.audio = ["audiosamples/C.mp3", "audiosamples/CSharp.mp3", "audiosamples/D.mp3", "audiosamples/DSharp.mp3", "audiosamples/E.mp3", "audiosamples/F.mp3", "audiosamples/FSharp.mp3", "audiosamples/G.mp3", "audiosamples/GSharp.mp3", "audiosamples/A.mp3", "audiosamples/ASharp.mp3", "audiosamples/B.mp3", "audiosamples/CTop.mp3"]
 
 
 perfPitch.events = function () {
