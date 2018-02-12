@@ -6,42 +6,82 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Perfect Pitch</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Lobster" rel="stylesheet">
+    <link rel="shortcut icon"  type= "image/png" href="assets/music-note-1275177_640.png">
 </head>
 <body>
-    
-    <div class = "wrapper">
-        
-        <!-- <h1>Perfect Pitch</h1> -->
-        <div class="keyboard wrapper">
-            <div class="white">
-                    <div class="key key-white" id="C" data-index=0></div>
-                    <div class="key key-white" id="D" data-index=2></div>
-                    <div class="key key-white" id="E" data-index=4></div>  
-                    <div class="key key-white" id="F" data-index=5></div>
-                    <div class="key key-white" id="G" data-index=7></div>
-                    <div class="key key-white" id="A" data-index=9></div>
-                    <div class="key key-white" id="B" data-index=11></div>               
-                    <div class="key key-white" id="C2" data-index=12></div>
+    <h1>Perfect Pitch</h1>
+    <div class="keyboard wrapper">
+        <div class="white">
+            <div class="key key-white" id="C" data-index=0>
+                <p>C</p>
             </div>
-            <div class="black">
-                <div class="key key-black" id="CSharp" data-index=1></div>
-                <div class="key key-black" id="DSharp" data-index=3></div>
-                <div class="key key-black" id="FSharp" data-index=6></div>
-                <div class="key key-black" id="GSharp" data-index=8></div>
-                <div class="key key-black" id="ASharp" data-index=10></div>
+            <div class="key key-white" id="D" data-index=2>
+                <p>D</p>
             </div>
-        </div>
-
-        <div>
-            <button class="practice">
-                practice
-            </button>
+            <div class="key key-white" id="E" data-index=4>
+                <p>E</p>
+            </div>  
+            <div class="key key-white" id="F" data-index=5>
+                <p>F</p>
+            </div>
+            <div class="key key-white" id="G" data-index=7>
+                <p>G</p>
+            </div>
+            <div class="key key-white" id="A" data-index=9>
+                <p>A</p>
+            </div>
+            <div class="key key-white" id="B" data-index=11>
+                <p>B</p>
+            </div>               
+            <div class="key key-white" id="C2" data-index=12>
+                <p>C</p>
+            </div>
+                <div class="black">
+                    <div class="key key-black" id="CSharp" data-index=1>
+                        <div>
+                            <p>C#</p>
+                            <p>D♭</p>
+                        </div>
+                    </div>
+                    <div class="key key-black" id="DSharp" data-index=3>
+                        <div>
+                            <p>D#</p>
+                            <p>E♭</p>
+                        </div>
+                    </div>
+                    <div class="black-space">
+                        <div class="key key-black" id="FSharp" data-index=6>
+                            <div>
+                                <p>F#</p>
+                                <p>G♭</p>
+                            </div>
+                        </div>
+                        <div class="key key-black" id="GSharp" data-index=8>
+                            <div>
+                                <p>G#</p>
+                                <p>A♭</p>
+                            </div>
+                        </div>
+                        <div class="key key-black" id="ASharp" data-index=10>
+                            <div>
+                                <p>A#</p>
+                                <p>B♭</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
+            
+    <div class="buttons">
+        <button class="practice">practice</button>
+        <button class="again" type="submit">reset</button>
+    </div>
+
+
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
-    <script src="scripts/script.js"></script>
-
-    
+    <script src="scripts/script.js"></script>   
 </body>
 </html>

@@ -4,62 +4,277 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 
 body {
-    background: red;
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23292929' stroke-width='67.7' stroke-opacity='0.18' %3E%3Ccircle fill='%23000000' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%230d0d0d' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%231a1a1a' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23272727' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23343434' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23404040' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%234d4d4d' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%235a5a5a' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23676767' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23747474' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23818181' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%238e8e8e' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%239b9b9b' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23a7a7a7' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23b4b4b4' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23c1c1c1' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23cecece' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23dbdbdb' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    /* background credit to Matt Lipman at Bump Set Creative */
+    /* www.svgbackgrounds.com */
 }
 
-.wrapper {
-    width: 1100px;
-    margin: 0 auto;
+h1 {
+    text-align: center;
+    color: ivory;
+    text-shadow: 9px 8px 5px #000;
+    font-family: 'Lobster', cursive;
+    font-size: 80px;
+    margin-bottom: 50px
 }
 
 .keyboard {
     display: flex;
-    position: relative;
-    
+    border-radius: 10px;
+    margin: 0 auto;
 }
 
-/* .key {
+.key {
     display: flex;
-} */
+}
 
 .white {
     display: flex;
-    border: 5px solid black;
+    position: relative;
+    background: rgb(15, 15, 15);
+    border: 20px solid black;
+    border-radius: 5px;
     margin: 0 auto;
+    justify-content: center;
+}
+
+p {
+    font-size: 25px;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    align-items: flex-end;
+    align-content: flex-end;
+    font-family: 'Lato', sans-serif;
 }
 
 .black {
     display: flex;
     position: absolute;
     top: 0;
-    left: 50px;
-    margin: 0 65px 0;
+    left: 88px;
+}
+
+.black p {
+    color: ivory;
 }
 
 .key-white {
     width: 125px;
-    height: 450px;
-    background-color:white;
+    height: 400px;
+    background-color: ivory;
     border: 1px solid black;
-    /* float:  left; */
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    margin: 0 auto;
 }
 
 .key-black {
+    display: flex;
     width: 75px;
     height: 250px;
-    background-color: black;
-    /* float: left; */
-    margin: 0 30px 0;
+    background-color: rgb(15, 15, 15);
+    border: 10px groove rgb(54, 54, 54);
+    margin: 0 50px 0 0;
+}
+
+.black-space {
+    display: flex;
+    margin-left: 125px;
+}
+
+.key-black div {
+    align-self: flex-end;
+    flex-direction: row;
+    color: white;
+    font-size: 25px;
+    margin: 0 auto;
 }
 
 .key-white:hover, .key-black:hover {
-    background-color: blue;
+    background-color: rgb(41, 205, 255);
+}
+
+.key-white:active, .key-black:active {
+    background-color: rgb(41, 205, 255);
+    transform: scale(.985);
+}
+
+.buttons {
+    display: flex;
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+button {
+    font-size: 18px;
+    text-align: center;
+    background-color: rgb(15, 15, 15);
+    color: ivory;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 16px 65px;
+    width: 250px;
+    border: 2px solid transparent;
+    margin: 0 auto;
+}
+
+button:hover{
+    border: 2px solid ivory;
+}
+
+button:focus{
+    outline: 0;
 }
 
 .correct {
-    background-color: green;
+    background-color: rgb(75, 255, 75);
 }
 
 .wrong {
     background-color: red;
+}
+
+
+
+@media (max-width: 1040px) {
+    .key-white {
+        width: 100px;
+        height: 350px;
+    }
+
+    .black {
+        top: 0;
+        left: 75px;
+    }
+
+    .key-black {
+        width: 50px;
+        height: 225px;
+        margin: 0 50px 0 0;
+    }
+
+    .black-space {
+        margin-left: 100px;
+    }
+
+    .buttons {
+        width: 75%;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:840px) {
+    .key-white {
+        width: 75px;
+        height: 325px;
+    }
+
+    .black {
+        top: 0;
+        left: 56px;
+    }
+
+    .key-black {
+        width: 35px;
+        height: 200px;
+        margin: 0 41px 0 0;
+    }
+
+    .black-space {
+        display: flex;
+        margin-left: 72px;
+    }
+
+    .buttons {
+        width: 85%;
+        margin-top: 50px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:645px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    .white {
+        flex-direction: column;
+    }
+
+    .key-white {
+        width: 300px;
+        height: 50px;
+    }
+
+    .black {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        top: 30px;
+        left: 100px;
+        right: 0;
+    }
+
+    .key-black {
+        width: 200px;
+        height: 35px;
+        margin: 0 0px 15px 0;
+    }
+
+    .key-black div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .black-space {
+        display: flex;
+        flex-direction: column;
+        margin: 52px 0 0 ;
+    }
+
+    .buttons {
+        display: flex;
+        width: 85%;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+    p {
+        font-size: 15px;
+        margin: 0 0 0 10px;
+        align-items: center;
+    }
+
+    .key-black div {
+        display: flex;
+        flex-direction: row;
+        color: white;
+        margin: 0 auto;
+        align-self: center;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    button {
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
 }

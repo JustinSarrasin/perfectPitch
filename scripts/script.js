@@ -27,12 +27,11 @@ perfPitch.events = function () {
 
 perfPitch.switchPractice = false;
 
-
 // click function
 perfPitch.randomNote = function () {
     //on random button click
     $('.practice').on('click', function (chosen) {
-
+    
         console.log("something is clicked");
         perfPitch.switchPractice = true;
         perfPitch.randomIndex = Math.floor(perfPitch.audio.length * Math.random())
@@ -42,48 +41,41 @@ perfPitch.randomNote = function () {
     });
 }
 
+$(".again").click(function () {
+    location.reload();
+});
+
 
 perfPitch.evaluate = function (userIndex) {
     // console.log(randomTrigger);
 
     console.log(perfPitch.switchPractice);
-    //    $('div').on('click', function () {
     //     console.log("this has been clicked after");
-    // })
 
     if (perfPitch.switchPractice === true) {
         if (perfPitch.randomIndex === userIndex) {
-            // alert("Goooot it");
+            // alert("correct");
             console.log(userIndex)
             let correctKey = $(".keyboard").find(`[data-index='${userIndex}']`)
 
-            // const correctKey = $('.key').data('index');
             console.log(correctKey)
             correctKey.addClass('correct');
-        
-            // perfPitch.randomIndex.backgroundColor = 'green';
-            // perfPitch.switchPractice = false;
-            // console.log(perfPitch.randomIndex);
         }
         else {
             // perfPitch.randomIndex.addClass('wrong');
             let wrongKey = $(".keyboard").find(`[data-index='${perfPitch.randomIndex}']`)
             wrongKey.addClass('wrong');
-
         }
-
     }
 }
 
 perfPitch.init = function () {
     perfPitch.events();
     perfPitch.randomNote();
-    //    perfPitch.random();
+    perfPitch.replay();
+    perfPitch.setTimeout();
 }
-
-
 
 $(function () {
     perfPitch.init();
-    // perfPitch.events();
 });    
