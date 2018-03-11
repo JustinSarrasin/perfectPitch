@@ -18,8 +18,8 @@ h1 {
     color: ivory;
     text-shadow: 9px 8px 5px #000;
     font-family: 'Lobster', cursive;
-    font-size: 80px;
-    margin-bottom: 50px
+    font-size: 90px;
+    margin-bottom: 40px
 }
 
 .keyboard {
@@ -109,6 +109,7 @@ p {
     width: 55%;
     margin: 0 auto;
     margin-top: 50px;
+    
 }
 
 button {
@@ -123,6 +124,11 @@ button {
     width: 250px;
     border: 2px solid transparent;
     margin: 0 auto;
+}
+
+button:active {
+    transform: scale(.985);
+   
 }
 
 button:hover{
@@ -277,4 +283,38 @@ button:focus{
         margin: 0 auto;
         margin-bottom: 10px;
     }
+}
+
+@media (max-width: 420px) {
+   h1 {
+      font-size: 45px;
+   }
+
+   .key-white {
+        width: 300px;
+        height: 40px;
+    }
+
+    .key-black {
+        width: 200px;
+        height: 25px;
+        margin: 0 0px 15px 0;
+    }
+
+    .black-space {
+        display: flex;
+        flex-direction: column;
+        margin: 38px 0 0 ;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+
+    .buttons button {
+         margin-top: 0px;
+      }
+
+    
 }

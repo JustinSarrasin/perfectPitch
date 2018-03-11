@@ -8,21 +8,39 @@ perfPitch.events = function () {
         // grab the note by ID
         // console.log("something is clicked")
         let playedNote = $(this).data('index');
-
+         // console.log(playedNote);
+      //   let key = $.Event("keydown", { keyCode: 65 });
+      //   console.log(key);
         //if this note is played, play matching note 
         let triggeredNote = perfPitch.audio[Number(playedNote)];
 
-        // console.log(triggeredNote);
+      //   console.log(triggeredNote);
         new Audio(triggeredNote).play();
 
         if (perfPitch.switchPractice) {
             //trigger a random number out of array
-            console.log(perfPitch.randomTrigger);
+            // console.log(perfPitch.randomTrigger);
 
             // perfPitch.eval.guess = getIndex;
             perfPitch.evaluate(playedNote)
         }
     });
+}
+
+
+
+perfPitch.keyboard = function (){
+   window.addEventListener('keydown', function (e) {
+      let keyNote = $(this).data('index');
+      // console.log(keyNote);
+
+      let hitNote = perfPitch.audio[Number(keyNote)];
+      console.log(hitNote);
+      
+      new Audio(hitNote).play();
+     
+      console.log(e);
+   })
 }
 
 perfPitch.switchPractice = false;
@@ -32,7 +50,7 @@ perfPitch.randomNote = function () {
     //on random button click
     $('.practice').on('click', function (chosen) {
     
-        console.log("something is clicked");
+      //   console.log("something is clicked");
         perfPitch.switchPractice = true;
         perfPitch.randomIndex = Math.floor(perfPitch.audio.length * Math.random())
         let randomTrigger = perfPitch.audio[perfPitch.randomIndex];
@@ -49,31 +67,41 @@ $(".again").click(function () {
 perfPitch.evaluate = function (userIndex) {
     // console.log(randomTrigger);
 
-    console.log(perfPitch.switchPractice);
+   //  console.log(perfPitch.switchPractice);
     //     console.log("this has been clicked after");
 
     if (perfPitch.switchPractice === true) {
         if (perfPitch.randomIndex === userIndex) {
             // alert("correct");
-            console.log(userIndex)
+            // console.log(userIndex)
             let correctKey = $(".keyboard").find(`[data-index='${userIndex}']`)
 
-            console.log(correctKey)
+            // console.log(correctKey)
             correctKey.addClass('correct');
+             setTimeout(function () {
+             correctKey.removeClass('correct');
+              //....and whatever else you need to do
+           }, 2000);
         }
         else {
-            // perfPitch.randomIndex.addClass('wrong');
             let wrongKey = $(".keyboard").find(`[data-index='${perfPitch.randomIndex}']`)
             wrongKey.addClass('wrong');
+            setTimeout(function () {
+              wrongKey.removeClass('wrong');
+           }, 2000);
+            
         }
     }
 }
 
 perfPitch.init = function () {
     perfPitch.events();
+    perfPitch.evaluate();
+   // window.addEventListener();
+    perfPitch.keyboard();
     perfPitch.randomNote();
-    perfPitch.replay();
-    perfPitch.setTimeout();
+   //  perfPitch.replay();
+   //  perfPitch.setTimeout();
 }
 
 $(function () {
